@@ -15,17 +15,25 @@ export function LogoAnimation() {
     }
   }, []);
 
+  const hideAnimation = () => {
+    setVideoEnded(true);
+    localStorage.setItem('logoAnimationShown', 'true');
+    setTimeout(() => {
+      setShowAnimation(false);
+    }, 500);
+  };
+
   const handleVideoEnd = () => {
     // Ensure video has actually finished playing
     if (videoRef.current && videoRef.current.ended) {
-      setVideoEnded(true);
-      // Mark as shown in localStorage only after video finishes
-      localStorage.setItem('logoAnimationShown', 'true');
-      // Small delay before hiding to ensure smooth transition
-      setTimeout(() => {
-        setShowAnimation(false);
-      }, 500);
+      hideAnimation();
     }
+  };
+
+  const handleVideoError = () => {
+    // If video fails to load, hide animation after a short delay
+    console.error('Video failed to load, hiding animation');
+    hideAnimation();
   };
 
   // Ensure video plays and doesn't get interrupted
@@ -33,9 +41,25 @@ export function LogoAnimation() {
     if (videoRef.current && showAnimation) {
       videoRef.current.play().catch((error) => {
         console.error('Error playing video:', error);
+        // If video can't play, hide animation
+        hideAnimation();
       });
     }
   }, [showAnimation]);
+
+  // Fallback timeout: hide animation after 10 seconds even if video doesn't load/end
+  useEffect(() => {
+    if (showAnimation) {
+      const timeout = setTimeout(() => {
+        if (showAnimation && !videoEnded) {
+          console.warn('Video timeout, hiding animation');
+          hideAnimation();
+        }
+      }, 10000); // 10 second fallback
+
+      return () => clearTimeout(timeout);
+    }
+  }, [showAnimation, videoEnded]);
 
   if (!showAnimation) {
     return null;
@@ -62,10 +86,14 @@ export function LogoAnimation() {
         muted
         playsInline
         onEnded={handleVideoEnd}
+        onError={handleVideoError}
         onLoadedData={() => {
           // Ensure video plays when loaded
           if (videoRef.current) {
-            videoRef.current.play();
+            videoRef.current.play().catch((error) => {
+              console.error('Error playing video after load:', error);
+              handleVideoError();
+            });
           }
         }}
         className="w-full h-full object-contain"
@@ -76,7 +104,7 @@ export function LogoAnimation() {
           position: 'relative'
         }}
       >
-        <source src="/Logo Animation.mp4" type="video/mp4" />
+        <source src="/logo-animation.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
