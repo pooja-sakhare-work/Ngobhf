@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,9 +18,11 @@ export function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="bg-gradient-to-br from-orange-500 to-red-600 p-2 rounded-lg">
-              <Heart className="w-6 h-6 text-white fill-white" />
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Bharath Hitarth Foundation Logo" 
+              className="h-12 w-auto"
+            />
             <div>
               <h1 className="text-orange-600">Bharath Hitarth Foundation</h1>
               <p className="text-xs text-gray-600">Empowering Communities</p>

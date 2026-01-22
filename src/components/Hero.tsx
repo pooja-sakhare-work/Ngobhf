@@ -52,21 +52,6 @@ export function Hero() {
             </button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20">
-            <div>
-              <p className="text-3xl sm:text-4xl text-orange-400 mb-2">10K+</p>
-              <p className="text-gray-300 text-sm sm:text-base">Lives Impacted</p>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl text-orange-400 mb-2">50+</p>
-              <p className="text-gray-300 text-sm sm:text-base">Projects</p>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl text-orange-400 mb-2">15+</p>
-              <p className="text-gray-300 text-sm sm:text-base">States</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

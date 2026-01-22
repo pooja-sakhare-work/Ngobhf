@@ -1,4 +1,5 @@
-import { Target, Heart, BookOpen, Users, Briefcase, Leaf } from 'lucide-react';
+import { Target, Heart, BookOpen, Users, Briefcase, Leaf, Info } from 'lucide-react';
+import { Tooltip, TooltipTrigger, TooltipContent } from './ui/tooltip';
 
 const focusAreas = [
   {
@@ -76,8 +77,17 @@ export function Programs() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-orange-600 mb-2">What We Do</p>
-          <h2 className="text-3xl sm:text-4xl text-gray-900 mb-4">
-            Our Intended Focus Areas (SDG-Aligned)
+          <h2 className="text-3xl sm:text-4xl text-gray-900 mb-4 flex items-center justify-center gap-2">
+            Our Intended Focus Areas (SDG-Aligned
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Info className="w-5 h-5 text-orange-600 cursor-help hover:text-orange-700 transition-colors" />
+              </TooltipTrigger>
+              <TooltipContent className="bg-gray-900 text-white max-w-xs p-3 text-sm">
+                <p>SDG-Aligned means our programs are aligned with the United Nations Sustainable Development Goals, ensuring our initiatives contribute to global targets for ending poverty, protecting the planet, and ensuring prosperity for all.</p>
+              </TooltipContent>
+            </Tooltip>
+            )
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto"></div>
         </div>
