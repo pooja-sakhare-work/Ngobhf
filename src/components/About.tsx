@@ -32,18 +32,12 @@ export function About() {
           {/* Content */}
           <div>
             <h3 className="text-2xl text-gray-900 mb-4">
-              Committed to Social Transformation
+              Who We Are
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Bharath Hitarth Foundation is a non-profit organization dedicated to bringing 
-              positive change in the lives of underprivileged communities across India. 
-              Founded with a vision to create an equitable society, we work tirelessly 
-              to provide access to quality education, healthcare, and livelihood opportunities.
-            </p>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Our approach is holistic and community-driven, ensuring sustainable impact 
-              through grassroots initiatives. We believe in empowering individuals to 
-              become agents of change in their own communities.
+              Bharat Hitarth Foundation is a non-profit organization dedicated to accelerating 
+              sustainable development in India through community-led, evidence-based interventions 
+              aligned with the United Nations Sustainable Development Goals (SDGs).
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 text-orange-600">
@@ -63,29 +57,43 @@ export function About() {
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl h-full flex flex-col">
             <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
               <Target className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl text-gray-900 mb-4">Our Mission</h3>
-            <p className="text-gray-600 leading-relaxed">
-              To empower marginalized communities by providing access to quality education, 
-              healthcare, and sustainable livelihood opportunities, fostering self-reliance 
-              and dignity for all.
+            <p className="text-gray-600 leading-relaxed flex-grow">
+              To enable equitable development by strengthening education, health, livelihoods, 
+              and environmental resilience while ensuring no one is left behind.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl">
+          <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl h-full flex flex-col">
             <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
               <Heart className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl text-gray-900 mb-4">Our Vision</h3>
-            <p className="text-gray-600 leading-relaxed">
-              To create an inclusive and equitable society where every individual has the 
-              opportunity to reach their full potential, contributing to a prosperous and 
-              harmonious nation.
+            <p className="text-gray-600 leading-relaxed flex-grow">
+              A resilient and inclusive India where development is sustainable, equitable, 
+              and future-ready.
             </p>
+          </div>
+        </div>
+
+        {/* Our Approach */}
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl h-full flex flex-col">
+            <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
+              <Users className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="text-xl text-gray-900 mb-4">Our Approach</h3>
+            <ul className="space-y-4 list-disc list-inside text-gray-600 leading-relaxed flex-grow">
+              <li>Community-centric program design</li>
+              <li>Alignment with national priorities and SDGs</li>
+              <li>Partnerships with institutions and local stakeholders</li>
+              <li>Focus on long-term, scalable impact</li>
+            </ul>
           </div>
         </div>
       </div>

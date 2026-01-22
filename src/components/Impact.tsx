@@ -1,29 +1,26 @@
-import { Users, MapPin, Heart, Award } from 'lucide-react';
+import React from 'react';
+import { Settings, Handshake, Target, Users, Rocket } from 'lucide-react';
 
-const stats = [
+const currentActivities = [
+  {
+    icon: Settings,
+    title: 'Establishing governance and compliance frameworks'
+  },
+  {
+    icon: Handshake,
+    title: 'Building partnerships with stakeholders'
+  },
+  {
+    icon: Target,
+    title: 'Designing pilot programs aligned with SDGs'
+  },
   {
     icon: Users,
-    number: '10,000+',
-    label: 'Lives Transformed',
-    description: 'Individuals benefited from our programs'
+    title: 'Mobilizing volunteers and supporters'
   },
   {
-    icon: MapPin,
-    number: '15+',
-    label: 'States',
-    description: 'Presence across India'
-  },
-  {
-    icon: Heart,
-    number: '50+',
-    label: 'Active Projects',
-    description: 'Ongoing community initiatives'
-  },
-  {
-    icon: Award,
-    number: '200+',
-    label: 'Volunteers',
-    description: 'Dedicated team members'
+    icon: Rocket,
+    title: 'Program implementation will begin in a phased manner'
   }
 ];
 
@@ -39,54 +36,59 @@ export function Impact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-orange-200 mb-2">Our Achievements</p>
+          <p className="text-orange-200 mb-2">Foundation Status</p>
           <h2 className="text-3xl sm:text-4xl text-white mb-4">
-            Creating Real Impact
+            Our Current Stage
           </h2>
           <div className="w-20 h-1 bg-white mx-auto mb-4"></div>
           <p className="text-orange-100 max-w-2xl mx-auto">
-            Numbers that reflect our commitment to building a better tomorrow
+            Bharat Hitarth Foundation is currently:
           </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-4">
-                  <Icon className="w-8 h-8 text-orange-600" />
-                </div>
-                <p className="text-4xl text-white mb-2">{stat.number}</p>
-                <p className="text-xl text-orange-100 mb-2">{stat.label}</p>
-                <p className="text-sm text-orange-200">{stat.description}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Testimonial */}
-        <div className="mt-16 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <img
-              src="https://images.unsplash.com/photo-1714949308848-d117347154d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHNtaWxpbmclMjBoYXBweXxlbnwxfHx8fDE3NjUxNTcyMTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Community member"
-              className="w-24 h-24 rounded-full object-cover border-4 border-white"
-            />
-            <div className="flex-1 text-center md:text-left">
-              <p className="text-lg text-white mb-4 leading-relaxed">
-                &quot;Bharath Hitarth Foundation has been a beacon of hope for our village. 
-                The education program has opened doors for our children that we never thought possible. 
-                We are forever grateful for their dedication and support.&quot;
-              </p>
-              <div>
-                <p className="text-white">Rajesh Kumar</p>
-                <p className="text-orange-200 text-sm">Village Head, Maharashtra</p>
-              </div>
+        {/* Steps Timeline - Horizontal One Line */}
+        <div className="max-w-7xl mx-auto mb-12">
+          <div className="relative">
+            {/* Horizontal Connecting Line */}
+            <div className="hidden md:block absolute top-16 left-0 right-0 h-0.5 bg-white/30"></div>
+            
+            {/* Steps in One Line */}
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-4 relative">
+              {currentActivities.map((activity, index) => {
+                const Icon = activity.icon;
+                const stepNumber = index + 1;
+                const isLast = index === currentActivities.length - 1;
+                
+                return (
+                  <div key={index} className="relative flex-1 flex flex-col items-center text-center">
+                    {/* Step Number & Icon Circle */}
+                    <div className="relative flex-shrink-0 mb-3">
+                      <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl relative z-10">
+                        <Icon className="w-12 h-12 text-orange-600" />
+                      </div>
+                      {/* Step Number Badge */}
+                      <div 
+                        className="absolute w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold border-4 border-white shadow-lg z-50"
+                        style={{ top: '50px', right: '32px', background: 'var(--color-orange-600)' }}
+                      >
+                        {stepNumber}
+                      </div>
+                    </div>
+                    
+                    {/* Step Text */}
+                    <p className="text-white text-sm md:text-base leading-relaxed font-medium">
+                      {activity.title}
+                    </p>
+                    
+                    {/* Arrow Between Steps */}
+                    {!isLast && (
+                      <div className="hidden md:block absolute top-16 right-0 transform translate-x-1/2 -translate-y-1/2 z-20">
+                        <span className="text-white text-2xl font-bold opacity-60">→</span>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

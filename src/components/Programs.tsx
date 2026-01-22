@@ -1,47 +1,71 @@
-import { BookOpen, Heart, Utensils, Users, Briefcase, Droplet } from 'lucide-react';
+import { Target, Heart, BookOpen, Users, Briefcase, Leaf } from 'lucide-react';
 
-const programs = [
+const focusAreas = [
   {
-    icon: BookOpen,
-    title: 'Education for All',
-    description: 'Providing quality education, scholarships, and learning resources to underprivileged children across India.',
-    image: 'https://images.unsplash.com/photo-1760267973986-5370a55550f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBjaGlsZHJlbiUyMGxlYXJuaW5nfGVufDF8fHx8MTc2NTEyMTQ4MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    stats: '5,000+ Students'
+    sdg: 'SDG 1 & 10',
+    title: 'Poverty Reduction and Inclusion',
+    description: 'We aim to support vulnerable communities through livelihood enhancement and social inclusion initiatives.',
+    icon: Target,
+    plannedFocus: [
+      'Skill development and employability',
+      'Financial literacy and inclusion',
+      'Support for marginalized groups'
+    ]
   },
   {
+    sdg: 'SDG 3',
+    title: 'Health and Well-Being',
+    description: 'We plan to promote preventive healthcare and awareness to strengthen community health outcomes.',
     icon: Heart,
-    title: 'Healthcare Services',
-    description: 'Mobile health clinics, free medical camps, and essential healthcare services in rural areas.',
-    image: 'https://images.unsplash.com/photo-1706806595136-5afefb45da1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwbWVkaWNhbCUyMHZvbHVudGVlcnN8ZW58MXx8fHwxNzY1MTc3NDg4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    stats: '15,000+ Patients Treated'
+    plannedFocus: [
+      'Health awareness programs',
+      'Nutrition and sanitation initiatives',
+      'Community health partnerships'
+    ]
   },
   {
-    icon: Utensils,
-    title: 'Nutrition Program',
-    description: 'Daily meal programs for malnourished children and food distribution drives for families in need.',
-    image: 'https://images.unsplash.com/photo-1593113630400-ea4288922497?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwZG9uYXRpb24lMjBjaGFyaXR5fGVufDF8fHx8MTc2NTE1MTkyM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    stats: '2,000+ Meals Daily'
+    sdg: 'SDG 4',
+    title: 'Quality Education',
+    description: 'We seek to strengthen access to quality education and reduce learning gaps.',
+    icon: BookOpen,
+    plannedFocus: [
+      'Foundational learning support',
+      'Digital and life skills education',
+      'Mentorship and scholarship facilitation'
+    ]
   },
   {
+    sdg: 'SDG 5',
+    title: 'Gender Equality',
+    description: 'We intend to empower women and girls through capacity building and economic participation.',
     icon: Users,
-    title: 'Women Empowerment',
-    description: 'Skills training, entrepreneurship programs, and support groups for women to achieve financial independence.',
-    image: 'https://images.unsplash.com/photo-1759738099669-d64b0656f6cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGVtcG93ZXJtZW50JTIwc2tpbGxzfGVufDF8fHx8MTc2NTE3NzQ4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    stats: '1,500+ Women Trained'
+    plannedFocus: [
+      'Skill training for women',
+      'Leadership and awareness programs',
+      'Support for women-led collectives'
+    ]
   },
   {
+    sdg: 'SDG 8',
+    title: 'Decent Work and Economic Growth',
+    description: 'We aim to promote sustainable livelihoods and entrepreneurship.',
     icon: Briefcase,
-    title: 'Skill Development',
-    description: 'Vocational training programs in various trades to enhance employability and create job opportunities.',
-    image: 'https://images.unsplash.com/photo-1764690690771-b4522d66b433?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZ28lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfHx8fDE3NjUxNzc0OTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    stats: '3,000+ Youth Skilled'
+    plannedFocus: [
+      'Vocational training',
+      'Micro-enterprise support',
+      'Market-oriented skill development'
+    ]
   },
   {
-    icon: Droplet,
-    title: 'Clean Water Initiative',
-    description: 'Installing water purification systems and wells in villages lacking access to clean drinking water.',
-    image: 'https://images.unsplash.com/photo-1593113702251-272b1bc414a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFyaXR5JTIwdm9sdW50ZWVycyUyMGhlbHBpbmd8ZW58MXx8fHwxNzY1MTU3NDg4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    stats: '50+ Villages Covered'
+    sdg: 'SDG 13 & 15',
+    title: 'Climate Action and Environment',
+    description: 'We plan to integrate environmental sustainability into community development.',
+    icon: Leaf,
+    plannedFocus: [
+      'Environmental awareness',
+      'Climate resilience education',
+      'Community conservation initiatives'
+    ]
   }
 ];
 
@@ -53,45 +77,42 @@ export function Programs() {
         <div className="text-center mb-16">
           <p className="text-orange-600 mb-2">What We Do</p>
           <h2 className="text-3xl sm:text-4xl text-gray-900 mb-4">
-            Our Programs
+            Our Intended Focus Areas (SDG-Aligned)
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We run multiple initiatives focused on creating sustainable impact in communities across India
-          </p>
+          <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto"></div>
         </div>
 
-        {/* Programs Grid */}
+        {/* Focus Areas Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {programs.map((program, index) => {
-            const Icon = program.icon;
+          {focusAreas.map((area, index) => {
+            const Icon = area.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 bg-white p-3 rounded-lg">
-                    <Icon className="w-6 h-6 text-orange-600" />
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-orange-600 mb-1">{area.sdg}</p>
+                    <h3 className="text-xl text-gray-900">{area.title}</h3>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl text-gray-900 mb-3">{program.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {program.description}
-                  </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <span className="text-orange-600">{program.stats}</span>
-                    <button className="text-orange-600 hover:text-orange-700 transition-colors">
-                      Learn More →
-                    </button>
-                  </div>
+                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
+                  {area.description}
+                </p>
+                <div className="pt-4 border-t border-gray-100">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-3">Planned Focus</h4>
+                  <ul className="space-y-1.5">
+                    {area.plannedFocus.map((focus, focusIndex) => (
+                      <li key={focusIndex} className="flex items-start gap-2 text-gray-600 text-sm">
+                        <span className="text-orange-600 mt-1.5 flex-shrink-0">•</span>
+                        <span className="leading-relaxed">{focus}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             );

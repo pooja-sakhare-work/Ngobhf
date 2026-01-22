@@ -3,8 +3,9 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Programs } from './components/Programs';
 import { Impact } from './components/Impact';
-import { Gallery } from './components/Gallery';
+import { Support } from './components/Support';
 import { Contact } from './components/Contact';
+import { Transparency } from './components/Transparency';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -16,8 +17,9 @@ export default function App() {
         <About />
         <Programs />
         <Impact />
-        <Gallery />
+        <Support />
         <Contact />
+        <Transparency />
       </main>
       <Footer />
     </div>

@@ -1,4 +1,4 @@
-import { Heart, Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Heart, Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Clock } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -83,10 +83,24 @@ export function Footer() {
             <h3 className="text-white mb-4">Get In Touch</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-orange-400" />
+                <div>
+                  <p className="text-gray-400">Address</p>
+                  <p>Bharat Hitarth Foundation, Delhi, India</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1 flex-shrink-0 text-orange-400" />
                 <div>
-                  <p>info@bharathhitarth.org</p>
-                  <p>contact@bharathhitarth.org</p>
+                  <p className="text-gray-400">Email</p>
+                  <p>hitarthfoundation.ngo@gmail.com</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <Clock className="w-4 h-4 mt-1 flex-shrink-0 text-orange-400" />
+                <div>
+                  <p className="text-gray-400">Office Hours</p>
+                  <p>Monday – Friday | 10:00 AM – 5:00 PM</p>
                 </div>
               </li>
               <li>

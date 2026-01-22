@@ -38,9 +38,6 @@ export function Gallery() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-orange-600 mb-2">Gallery</p>
-          <h2 className="text-3xl sm:text-4xl text-gray-900 mb-4">
-            Moments of Change
-          </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Capturing the impact of our work and the smiles we bring to communities
