@@ -19,8 +19,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Dedicated to empowering communities through education, healthcare, 
-              and sustainable development initiatives across India.
+              Closely monitoring Policy Framework of India and working on the better implementation of Govt schemes to Remote and Targeted communities with Objective of Inclusive Growth with enhanced Research, in collaboration with the Government of India and various other partners.
             </p>
           </div>
 
