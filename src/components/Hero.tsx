@@ -10,18 +10,16 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20">
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/banner.jpeg"
-          alt="Bharat Hitarth Foundation banner"
-          className="hidden sm:block w-full h-full object-cover object-[25%_50%] md:object-center"
-        />
-        {/* Mobile only: banner_mobile.jpeg */}
-        <img
-          src="/banner_mobile.jpeg"
-          alt="Bharat Hitarth Foundation banner"
-          className="block sm:hidden w-full h-full object-cover"
-        />
+        <picture>
+          <source media="(min-width: 791px)" srcSet="/banner.jpeg" />
+          <img
+            src="/banner_mobile.jpeg"
+            alt="Bharat Hitarth Foundation banner"
+            className="w-full h-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
       </div>
 
@@ -37,7 +35,8 @@ export function Hero() {
           </h1>
           
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-            Bharath Hitarth foundation is closely monitoring Policy Framework of India and working on the better implementation of the Govt schemes to the Remote and Targeted communities with Objective of Inclusive Growth with enhanced Research, in collaboration with the Government of India and various other partners.
+            Bharath Hitarth Foundation is dedicated to empowering communities through education, 
+            healthcare, and sustainable development initiatives across India.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
