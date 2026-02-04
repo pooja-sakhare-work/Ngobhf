@@ -12,20 +12,26 @@ export function Hero() {
     <section id="home" className="relative min-h-screen flex items-center pt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/banner.jpeg"
-          alt="Bharat Hitarth Foundation banner"
-          className="w-full h-full object-cover object-[25%_50%] md:object-center"
-        />
+        <picture>
+          <source
+            media="(max-width: 791px)"
+            srcSet="/banner_mobile.jpeg"
+          />
+          <img
+            src="/banner.jpeg"
+            alt="Bharat Hitarth Foundation banner"
+            className="w-full h-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl">
-          <div className="inline-block bg-orange-500/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-4 py-2 mb-6">
+          {/* <div className="inline-block bg-orange-500/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-4 py-2 mb-6 lg:mt-16">
             <p className="text-orange-300 text-sm">Making a Difference Since 2020</p>
-          </div>
+          </div> */}
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
             Building a Better <span className="text-orange-400">Tomorrow</span> Together
